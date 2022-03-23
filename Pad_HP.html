@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>パズドラ実質HP計算</title>
+        <style>
+            .redText {
+                color: red;
+            }
+
+            .font16 {
+                font-size: 16pt;
+            }
+
+            .displayNone {
+                display: none;
+            }
+        </style>
+        <script src="HP.js"></script>
+        <script src="calcHP.js"></script>
+    </head>
+
+    <body>
+        <h1 id="headTitle">パズドラ実質HP倍率計算</h1>
+        <p>リーダー,フレンドのHP倍率と軽減率を下に書いてね</p>
+        <p>50%発狂ダメージを下に書いておくよ</p>
+        <dl>
+            <dt>裏魔廊ジルレガート</dt>
+            <dd>650260ダメージ</dd>
+        </dl>
+        <dl>
+            <dt>機構城ヘキサゼオン</dt>
+            <dd>1023372ダメージ</dd>
+        </dl>
+        <dl>
+            <dt>四次元ウルド先制</dt>
+            <dd>906750ダメージ</dd>
+        </dl>
+        <dl>
+            <dt>四次元光,木ミル</dt>
+            <dd>1255000ダメージ</dd>
+        </dl>
+        <dl>
+            <dt>多次元闇ユリシャ</dt>
+            <dd>1676000ダメージ</dd>
+        </dl>
+        <dl>
+            <dt>零次元ビッグバン</dt>
+            <dd>1275015ダメージ</dd>
+        </dl>
+        <p>
+        <div>
+            <input type="text" id="LeaderHpInput" name="LeaderHp" placeholder="リーダーのHP"><br>
+            <span id="LeaderHpInputMsg" class="redText"></span>
+        </div>
+        <div>
+            <input type="text" id="LeaderReductionRateInput" name="LeaderReductionRate" placeholder="リーダーの軽減率">%<br>
+            <span id="LeaderReductionRateInputMsg" class="redText"></span>
+        </div>
+        <div>
+        <input type="text" id="FriendHpInput" name="FriendHp" placeholder="フレンドのHP"><br>
+            <span id="FriendHpInputMsg" class="redText"></span>
+        </div>
+        <div>
+            <input type="text" id="FriendReductionRateInput" name="FriendReductionRate" placeholder="フレンドの軽減率">%<br>
+            <span id="FriendReductionRateInputMsg" class="redText"></span>
+        </div>
+        <button type="button" id="calcHpButton" onclick="onCalcHPButtonClick()" disabled>計算</button>
+        </p>
+        <p id="resultMessage" class="displayNone">
+            そのパーティの実質HPは<span id="HPResult" class="redText font16"></span>です。
+        </p>
+    </body>
+
+</html>
